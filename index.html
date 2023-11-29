@@ -22,8 +22,8 @@
     align-content: center;
     width: 125px;
     height: 125px;
-    top: 10px;
-    left: 20px;
+    top: 30px;
+    left: 25px;
     background-image: url(Gavel.gif);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -32,7 +32,8 @@
   position: absolute;
   color: white;
   top: 10vh;
-  left: 10vh;
+  left: 5vh;
+  font-size: 20;
   }
  .frame {
    position: absolute;
@@ -57,8 +58,32 @@
    background-color: white;
   }
   .menu {
-    position: absulute;
+    position: absolute;
+    bottom: 4vh;
+    width: 400px;
+    height: 40px;
+  }
+ .open {
+    position: relative;
+    top: 10px;
+    height: 40px;
+    border: 2 solid black;
+    background-color: white;
     
+  }
+ .cross {
+    position: relative;
+    top: 10px;
+    height: 40px;
+    border: 2 solid black;
+    background-color: white;
+  }
+ .close {
+    position: relative;
+    top: 10px;
+    height: 40px;
+    border: 2 solid black;
+    background-color: white;
   }
 </style>
 
@@ -73,9 +98,9 @@
   <div class="viewer"></div>
 </div>
 <div class="menu">
-  <button id="open">open</button>
-  <button id="cross">cross</button>
-  <button id="close">close</button>
+  <button class="open">Opening Statement</button>
+  <button class="cross">Cross Examination</button>
+  <button class="close">Closing Arguement</button>
 </div>
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
   
