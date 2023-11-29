@@ -85,7 +85,6 @@
     background-color: white;
   }
 </style>
-<iframe id="youtube" src="https://www.youtube.com/embed/xSE9Qk9wkig"></iframe>
 <body>
 <div class="motto">
   <h1> Be Clean. Be Loud. Be Fun.</h1>
@@ -95,7 +94,8 @@
 </div>
 <div class="frame">
   <div class="viewer">
-  <iframe  width: 515px height: 500px src="https://www.youtube.com/embed/wOLks07z_fw"</iframe>
+    <iframe width="415" height="300" id="youtube" src="https://www.youtube.com/embed/wOLks07z_fw"
+    frameborder="0"></iframe>
   </div>
 </div>
 <div class="menu">
@@ -106,9 +106,28 @@
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
   
 <script>
-
-  function newOpen () {
-    nn.get('#viewer').style.backgroundImage= 
+  /*VIDEOS*/
+  const openIds= [
+    'e3eJeJ2k5jg&t=3959s',
+    'XUgI5N05iDA?t=195',
+    'xWW-RXgJUfc?t=348',
+    'PbNxJ5-J8d8?t=719',
+  ]
+  const crossIds= [
+    'XUgI5N05iDA?t=1469',
+    '62PnxXygdHY?t=5756',
+    'Yoab0USQouQ?t=1900',
+    'jFFNhbryQko?t=474',
+    'QrIyP-TpG_Y?t=485',
+  ]
+  const closeIds= [
+    'Wrnns7ZdcUA?t=7264',
+    '4RfEy6eRjW4?t=17',
+    'mr531py8giI?t=11953',
+    '19TcAvsW9fk?t=10014',
+  ]
+/*FUNCTIONS*/
+  function newOpen () { 
     nn.get('#youtube')
     const id = nn.random(openIds)
     const url = 'https://www.youtube.com/embed/' + id
@@ -128,21 +147,13 @@
     const url = 'https://www.youtube.com/embed/' + id
     youtube.setAttribute('src', url)
   }
+/*BUTTONS*/
   nn.get('#open').on('click', newOpen)
     
   nn.get('#cross').on('click', newCross)
     
   nn.get('#close').on('click', newClose)
-    
-  const openIds= [
-    '',
-  ]
-  const crossIds= [
-    
-  ]
-  const closeIds= [
-    
-  ]
+  
 </script>
     
 </body>
