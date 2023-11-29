@@ -69,7 +69,6 @@
     height: 40px;
     border: 2 solid black;
     background-color: white;
-    
   }
  .cross {
     position: relative;
@@ -86,7 +85,7 @@
     background-color: white;
   }
 </style>
-
+<iframe id="youtube" src="https://www.youtube.com/embed/xSE9Qk9wkig"></iframe>
 <body>
 <div class="motto">
   <h1> Be Clean. Be Loud. Be Fun.</h1>
@@ -95,7 +94,9 @@
   <div class="gavel"></div>
 </div>
 <div class="frame">
-  <div class="viewer"></div>
+  <div class="viewer">
+  <iframe  width: 515px height: 500px src="https://www.youtube.com/embed/wOLks07z_fw"</iframe>
+  </div>
 </div>
 <div class="menu">
   <button class="open">Opening Statement</button>
@@ -107,19 +108,41 @@
 <script>
 
   function newOpen () {
-    nn.get('viewer').style.backgroundImage= 
+    nn.get('#viewer').style.backgroundImage= 
+    nn.get('#youtube')
+    const id = nn.random(openIds)
+    const url = 'https://www.youtube.com/embed/' + id
+    youtube.setAttribute('src', url)
   }
   function newCross () {
-    nn.get('viewer').style.backgroundImage= 
+    nn.get('#viewer').style.backgroundImage= 
+    nn.get('#youtube')
+    const id = nn.random(crossIds)
+    const url = 'https://www.youtube.com/embed/' + id
+    youtube.setAttribute('src', url)
     }
   function newClose() {
-    nn.get('viewer').style.backgroundImage=
+    nn.get('#viewer').style.backgroundImage=
+    nn.get('#youtube')
+    const id = nn.random(closeIds)
+    const url = 'https://www.youtube.com/embed/' + id
+    youtube.setAttribute('src', url)
   }
-  nn.get('open').on('click', newOpen)
+  nn.get('#open').on('click', newOpen)
     
-  nn.get('cross').on('click', newCross)
+  nn.get('#cross').on('click', newCross)
     
-  nn.get('close').on('click', newClose)
+  nn.get('#close').on('click', newClose)
+    
+  const openIds= [
+    '',
+  ]
+  const crossIds= [
+    
+  ]
+  const closeIds= [
+    
+  ]
 </script>
     
 </body>
