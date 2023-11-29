@@ -37,27 +37,64 @@
  .frame {
    position: absolute;
    align-content: center;
+   transform: rotate(90deg);
    width: 500px;
    height: 600px;
-   top: calc(50vh-200);
+   top: 20vh;
+   left: calc(50vh-300px);
    background-image: url(frame.png);
    background-size: 100%;
    background-repeat: no-repeat;
-   transform: rotate(90deg);
   }
-  
+ .viewer {
+   position: relative;
+   align-content: center;
+   transform: rotate(270deg);
+   width: 415px;
+   height: 300px;
+   top: 140px;
+   left: 43px;
+   background-color: white;
+  }
+  .menu {
+    position: absulute;
+    
+  }
 </style>
 
 <body>
 <div class="motto">
-  <h1> Be Clean. Be Loud. Be Fun. </h1></div>
-<button class="logo">
-  <div class="gavel"></div></button>
+  <h1> Be Clean. Be Loud. Be Fun.</h1>
+</div>
+<div class="logo">
+  <div class="gavel"></div>
+</div>
 <div class="frame">
   <div class="viewer"></div>
 </div>
-    
+<div class="menu">
+  <button id="open">open</button>
+  <button id="cross">cross</button>
+  <button id="close">close</button>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+  
 <script>
+
+  function newOpen () {
+    nn.get('viewer').style.backgroundImage= 
+  }
+  function newCross () {
+    nn.get('viewer').style.backgroundImage= 
+    }
+  function newClose() {
+    nn.get('viewer').style.backgroundImage=
+  }
+  nn.get('open').on('click', newOpen)
+    
+  nn.get('cross').on('click', newCross)
+    
+  nn.get('close').on('click', newClose)
 </script>
     
 </body>
