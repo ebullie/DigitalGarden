@@ -104,10 +104,11 @@
   <button class="cross">Cross Examination</button>
   <button class="close">Closing Arguement</button>
 </div>
-  <!--IS THIS THE RIGHT LINK? I TRIED IT AND IT DIDN'T WORK EITHER:
-<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>-->
-<script src="nn.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
 <script>
+  /* global nn */
+  
   /*VIDEOS*/
   const openIds= [
     'e3eJeJ2k5jg&t=3959s',
@@ -129,13 +130,33 @@
     '19TcAvsW9fk?t=10014',
   ]
 /*FUNCTIONS*/
-  function newOpen () { 
+ /* function newOpen () { 
     nn.get('#youtube')
     const id = nn.random(openIds)
     const url = 'https://www.youtube.com/embed/' + id
-    youtube.setAttribute('src', url)
+    youtube.setAttribute('src', url)*/
+  function newOpen () {
+    const youtube = nn.get('#youtube')
+    const id = nn.random(openIds)
+    const url = 'https://www.youtube.com/embed/' + id
+    youtube.setAttribute('src', url) 
   }
-  function newCross () {
+  
+    function newCross () {
+    const youtube = nn.get('#youtube')
+    const id = nn.random(crossIds)
+    const url = 'https://www.youtube.com/embed/' + id
+    youtube.setAttribute('src', url) 
+  }
+  
+    function newClose () {
+    const youtube = nn.get('#youtube')
+    const id = nn.random(closeIds)
+    const url = 'https://www.youtube.com/embed/' + id
+    youtube.setAttribute('src', url) 
+  }
+  
+ /* function newCross () {
     nn.get('#viewer').style.backgroundImage= 
     nn.get('#youtube')
     const id = nn.random(crossIds)
@@ -148,13 +169,13 @@
     const id = nn.random(closeIds)
     const url = 'https://www.youtube.com/embed/' + id
     youtube.setAttribute('src', url)
-  }
+  }*/
 /*BUTTONS*/
-  nn.get('#open').on('click', newOpen)
+  nn.get('.open').on('click', newOpen)
     
-  nn.get('#cross').on('click', newCross)
+  nn.get('.cross').on('click', newCross)
     
-  nn.get('#close').on('click', newClose)
+  nn.get('.close').on('click', newClose)
   
 </script>
     
